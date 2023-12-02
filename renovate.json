@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "enabledManagers": ["pip_requirements", "pre-commit"],
+  "rebaseWhen": "behind-base-branch",
+  "gitLabAutomerge": true,
+  "packageRules": [
+    {
+      "packageNames": [
+        "black",
+        "flake8",
+        "autopep8",
+        "isort",
+        "pre-commit"
+      ],
+      "updateTypes": ["minor", "patch"],
+      "groupName": "code-quality"
+    }
+  ],
+  "labels": ["dependencies"],
+  "commitMessagePrefix": "📦",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "📦 Dependency Dashboard"
+}
